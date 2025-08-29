@@ -83,7 +83,7 @@ export default function Dashboard() {
                 >Logout</button>
             </div>
             {backendError && <div className="text-red-500 mb-4">{backendError}</div>}
-            <form onSubmit={handleSubmit(onSubmit)} className="bg-white p-6 shadow rounded-xl mb-6">
+            <form onSubmit={handleSubmit(onSubmit)} className="bg-white p-6 shadow rounded-xl mb-6 sticky top-4 z-10">
                 <InputField label="Title" register={register("title")} error={errors.title} />
                 <select {...register("status")} className="border rounded-lg w-full px-3 py-2 mb-4">
                     <option value="pending">Pending</option>
