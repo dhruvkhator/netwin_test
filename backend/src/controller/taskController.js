@@ -61,7 +61,7 @@ export const updateTask = async( req, res)=>{
 
         res.json(task);
     } catch (error) {
-        res.status(400).json({messsage: error.message})
+        res.status(400).json({message: error.message})
     }
 }
 

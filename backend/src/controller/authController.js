@@ -31,9 +31,11 @@ export const signup = async (req, res)=>{
         console.log(userExists)
         if(userExists) return res.status(400).json({ message: "User already exists"});
 
-        const user = await User.create(parsed);
-
-        return res.status(201).json({message:"User signed up successfully!", user})
+    const user = await User.create(parsed);
+    const token = generateToken(user._id);
+    const userObj = user.toObject();
+    delete userObj.password;
+    return res.status(201).json({message:"User signed up successfully!", user: userObj, token})
 
         
     } catch (error) {
@@ -85,27 +87,3 @@ export const login = async (req, res)=>{
 }
 
 
-
-
-[
-  {
-    "origin": "string",
-    "code": "too_small",
-    "minimum": 3,
-    "inclusive": true,
-    "path": [
-      "name"
-    ],
-    "message": "Name should be at least 3 characters long"
-  },
-  {
-    "origin": "string",
-    "code": "too_small",
-    "minimum": 8,
-    "inclusive": true,
-    "path": [
-      "password"
-    ],
-    "message": "Password must be at least 8 characters long"       
-  }
-]
