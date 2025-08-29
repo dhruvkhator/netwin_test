@@ -11,6 +11,12 @@ A full-stack task management web app built with React (frontend) and Node.js/Exp
 
 ## Getting Started
 
+### Demo Login
+You can use the following credentials to log in:
+
+**Email:** dhruv@test.com
+**Password:** dhruv2811
+
 ### Prerequisites
 - Node.js (v16+ recommended)
 - npm (comes with Node.js)
